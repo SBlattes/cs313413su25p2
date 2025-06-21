@@ -73,14 +73,14 @@ public class TestIterator {
     list.add(66);
     final var i = list.iterator();
     while (i.hasNext()) {
-      if (i.next() == 77) {
+      if (i.next().intValue() == 77) {
         i.remove(); // TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
       }
     }
+    assertEquals(List.of(33,44,55,66), list);
     // TODO using assertEquals and List.of, express which values are left in the list
     // See TestList.java for examples of how to use List.of; also see the Java List
     // interface for more information
-    fail("Not yet implemented"); // remove this line when done
   }
 
   @Test
